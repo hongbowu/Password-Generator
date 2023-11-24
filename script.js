@@ -13,106 +13,22 @@ function generatePassword() {
   
   var news = "";
   var i = 0;
-  
+ 
   if (lengthOfPassword<8 || lengthOfPassword>128) {
     return;
   } else if (!lowerCase && !upperCase && !numeric && !specialCharacter) {
     return;
-  } else if (lowerCase && upperCase && numeric && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-      if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
+  } 
+  for (i = 0; i < lengthOfPassword; i++) {
+    if (lowerCase && news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)]
+    } if  (upperCase && news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
+    } if  (numeric && news.length <lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
+    } if  (specialCharacter && news.length <lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
     }
-  } else if (lowerCase && upperCase && numeric) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      }
-    }
-  } else if (lowerCase && upperCase && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (lowerCase && numeric && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (upperCase && numeric && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (lowerCase && upperCase) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      }
-    }
-  } else if (lowerCase && numeric) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      }
-    }
-  } else if (lowerCase && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (upperCase && numeric) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      }
-    }
-  } else if (upperCase && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length <lengthOfPassword) { news += upper[Math.floor(Math.random()*upper.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (numeric && specialCharacter) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      } if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  } else if (lowerCase) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if(news.length <lengthOfPassword) { news += low[Math.floor(Math.random()*low.length)] 
-      }
-  }
-  } else if (numeric) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      }
-    }
-  } else if (numeric) {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length < lengthOfPassword) { news += numbers[Math.floor(Math.random()*numbers.length)]
-      }
-    }
-  } else {
-    for (i = 0; i < lengthOfPassword; i++) {
-        if (news.length < lengthOfPassword) { news += specials[Math.floor(Math.random()*specials.length)]
-      }
-    }
-  }
-  return news;
-  }
+      
+  } 
+    return news;
+}
 
 var generateBtn = document.querySelector("#generate");
 
